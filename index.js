@@ -51,7 +51,7 @@ app.get("/movies/:id", (request, response) => {
   const movie = movies.find((mv) => mv.id === id);
   const notFound = { message };
 
-  response.send(movies);
+  response.send(movie);
   //   response.send(`movies Details ${id}`);
 });
 app.listen(PORT, () => console.log("APP is started on", PORT));
