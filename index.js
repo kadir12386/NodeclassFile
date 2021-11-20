@@ -44,7 +44,7 @@ const movies = [
 app.get("/", (request, response) => {
   response.send("Hello , !!!");
 });
-// console.log("sangeetha");
+console.log(sangeetha);
 app.get("/movies/:id", (request, response) => {
   console.log(request.params);
   const { id } = request.params;
