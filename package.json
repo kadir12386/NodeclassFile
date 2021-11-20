@@ -1,0 +1,22 @@
+{
+  "name": "b252-we-nodejs",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/kadir12386/NJFile.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/kadir12386/NJFile/issues"
+  },
+  "homepage": "https://github.com/kadir12386/NJFile#readme",
+  "dependencies": {
+    "express": "^4.17.1"
+  }
+}
