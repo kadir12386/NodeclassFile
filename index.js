@@ -27,7 +27,7 @@ async function createConnection() {
 export const client = await createConnection();
 
 app.get("/", (request, response) => {
-  response.send("Hello World !!!");
+  response.send("Hello World 🌎🌎🌎!!!");
 });
 
 app.use("/movies", moviesRouter);
