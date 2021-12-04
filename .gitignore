@@ -1,2 +1,5 @@
 node_modules
 .env
+sample.txt
+backup.js
+names.txt
