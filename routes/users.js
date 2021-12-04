@@ -20,7 +20,6 @@ router.route("/signup").post(async (request, response) => {
 
   const result = await insertUser({ username, password: hashedPassword });
   response.send(result);
-  //   response.send(isUserExist);
 });
 
 export const usersRouter = router;
