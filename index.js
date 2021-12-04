@@ -32,6 +32,8 @@ app.get("/", (req, res) => {
   res.send("Hello World");
 });
 
+//log
+
 app.use("/movies", moviesRouter);
 // /users/signup
 app.use("/users", usersRouter);
