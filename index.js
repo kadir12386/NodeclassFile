@@ -28,6 +28,10 @@ async function createConnection() {
 
 export const client = await createConnection();
 
+app.get("/", (req, res) => {
+  res.send("Hello World");
+});
+
 app.use("/movies", moviesRouter);
 // /users/signup
 app.use("/users", usersRouter);
