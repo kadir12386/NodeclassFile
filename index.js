@@ -6,13 +6,11 @@ import { usersRouter } from "./routes/users.js";
 import cors from "cors";
 
 dotenv.config();
-//log
-
 const app = express();
 const PORT = process.env.PORT || 9000;
 // const PORT = 9000;
 //Process.env
-console.log(process.env);
+// console.log(process.env);
 const MONGO_URL = process.env.MONGO_URL;
 
 app.use(express.json());
