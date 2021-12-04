@@ -14,9 +14,6 @@ const PORT = process.env.PORT || 9000;
 console.log(process.env);
 const MONGO_URL = process.env.MONGO_URL;
 
-// const MONGO_URL =
-//   "mongodb+srv://sangeetha:sangeetha19051997@cluster0.uspim.mongodb.net";
-
 app.use(express.json());
 app.use(cors()); //third-party middleware
 
