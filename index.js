@@ -26,11 +26,9 @@ async function createConnection() {
 
 export const client = await createConnection();
 
-app.get("/", (req, res) => {
-  res.send("Hello World");
+app.get("/", (request, response) => {
+  response.send("Hello World !!!");
 });
-
-//log
 
 app.use("/movies", moviesRouter);
 // /users/signup
