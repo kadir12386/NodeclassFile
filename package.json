@@ -11,14 +11,14 @@
   },
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/kadir12386/N-File.git"
+    "url": "git+https://github.com/kadir12386/NodeclassFile.git"
   },
   "author": "",
   "license": "ISC",
   "bugs": {
-    "url": "https://github.com/kadir12386/NJFile/issues"
+    "url": "https://github.com/kadir12386/NodeclassFile/issues"
   },
-  "homepage": "https://github.com/kadir12386/NJFile#readme",
+  "homepage": "https://github.com/kadir12386/NodeclassFile#readme",
   "dependencies": {
     "bcrypt": "^5.0.1",
     "cors": "^2.8.5",
