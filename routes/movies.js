@@ -6,12 +6,13 @@ import {
   insertMovie,
   updateMovieById,
 } from "../helper.js";
+import { auth } from "./middleware/auth.js";
 
 const router = express.Router();
 
 router
   .route("/")
-  .get(async (request, response) => {
+  .get(auth, async (request, response) => {
     console.log("Query", request.query);
     const filter = request.query;
     const filterMovies = await getMovie(filter);
@@ -19,7 +20,7 @@ router
     response.send(filterMovies);
   })
   //=======================post method===================
-  .post(async (request, response) => {
+  .post(auth, async (request, response) => {
     const data = request.body;
     console.log("data", data);
     const result = await insertMovie(data);
@@ -29,7 +30,7 @@ router
 //=======================filter method===================
 router
   .route("/:id")
-  .get(async (request, response) => {
+  .get(auth, async (request, response) => {
     console.log(request.params);
     const { id } = request.params;
     const movie = await getMovieById(id);
@@ -38,7 +39,7 @@ router
     movie ? response.send(movie) : response.status(404).send(notFound);
   })
   //=======================Delete method===================
-  .delete(async (request, response) => {
+  .delete(auth, async (request, response) => {
     console.log(request.params);
     const { id } = request.params;
     const movie = await deleteMovieById(id);
@@ -47,7 +48,7 @@ router
     movie ? response.send(movie) : response.status(404).send(notFound);
   })
   //=======================updated method =================== //similary to post
-  .put(async (request, response) => {
+  .put(auth, async (request, response) => {
     const { id } = request.params;
     const data = request.body;
     console.log("data", data);
