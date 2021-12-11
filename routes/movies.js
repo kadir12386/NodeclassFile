@@ -6,14 +6,14 @@ import {
   insertMovie,
   updateMovieById,
 } from "../helper.js";
-// import { auth } from "./middleware/auth.js";
+import { auth } from "./middleware/auth.js";
 
 const router = express.Router();
 
 router
   .route("/")
-  // .get(auth, async (request, response) => {
-  .get(async (request, response) => {
+  .get(auth, async (request, response) => {
+    // .get(async (request, response) => {
     console.log("Query", request.query);
     const filter = request.query;
     const filterMovies = await getMovie(filter);
@@ -21,8 +21,8 @@ router
     response.send(filterMovies);
   })
   //=======================post method===================
-  // .post(auth, async (request, response) => {
-  .post(async (request, response) => {
+  .post(auth, async (request, response) => {
+    // .post(async (request, response) => {
     const data = request.body;
     console.log("data", data);
     const result = await insertMovie(data);
