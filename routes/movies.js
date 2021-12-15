@@ -32,8 +32,8 @@ router
 //=======================filter method===================
 router
   .route("/:id")
-  // .get(auth, async (request, response) => {
-  .get(async (request, response) => {
+  .get(auth, async (request, response) => {
+    // .get(async (request, response) => {
     console.log(request.params);
     const { id } = request.params;
     const movie = await getMovieById(id);
@@ -42,8 +42,8 @@ router
     movie ? response.send(movie) : response.status(404).send(notFound);
   })
   //=======================Delete method===================
-  // .delete(auth, async (request, response) => {
-  .delete(async (request, response) => {
+  .delete(auth, async (request, response) => {
+    // .delete(async (request, response) => {
     console.log(request.params);
     const { id } = request.params;
     const movie = await deleteMovieById(id);
@@ -52,8 +52,8 @@ router
     movie ? response.send(movie) : response.status(404).send(notFound);
   })
   //=======================updated method =================== //similary to post
-  // .put(auth, async (request, response) => {
-  .put(async (request, response) => {
+  .put(auth, async (request, response) => {
+    // .put(async (request, response) => {
     const { id } = request.params;
     const data = request.body;
     console.log("data", data);
