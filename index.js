@@ -4,6 +4,7 @@ import { MongoClient } from "mongodb";
 import { moviesRouter } from "./routes/movies.js";
 import { usersRouter } from "./routes/users.js";
 import cors from "cors";
+import { auth } from "./routes/middleware/auth.js";
 
 dotenv.config();
 const app = express();
@@ -56,15 +57,17 @@ app.use("/movies", moviesRouter);
 // /users/signup
 app.use("/users", usersRouter);
 
-app.get("/recipes", async (request, response) => {
+app.get("/recipes", auth, async (request, response) => {
   const recipes = await client
     .db("b252we")
     .collection("recipe")
     .find({})
     .toArray();
-  response.send(recipes);
+  const notFound = { message: "No matching movies" };
+  recipes ? response.send(recipes) : response.status(404).send(notFound);
+  // response.send(recipes);
 });
-app.post("/recipes", async (request, response) => {
+app.post("/recipes", auth, async (request, response) => {
   const data = request.body;
   const result = await client
     .db("b252we")

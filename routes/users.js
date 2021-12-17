@@ -21,13 +21,13 @@ router.route("/signup").post(async (request, response) => {
   }
   //checking the password length is long or short
   if (password.length < 8) {
-    response.send({ message: "provide a longer password" });
+    response.status(400).send({ message: "provide a longer password" });
     return;
   }
   if (
     !/^(?=.*[0-9])(?=.*[a-z])(?=.*[A-Z])(?=.*[@!#%&]).{8,}$/g.test(password)
   ) {
-    response.send({ message: "Password pattern does not match" });
+    response.status(400).send({ message: "Password pattern does not match" });
     return;
   }
   const result = await insertUser({ username, password: hashedPassword });

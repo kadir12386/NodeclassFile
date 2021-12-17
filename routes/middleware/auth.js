@@ -7,6 +7,6 @@ export const auth = (request, response, next) => {
     console.log("token", token);
     next();
   } catch (err) {
-    response.send({ error: err.message });
+    response.status(401).send({ error: err.message });
   }
 };
